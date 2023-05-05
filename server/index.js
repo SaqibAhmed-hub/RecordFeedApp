@@ -40,7 +40,8 @@ function connectDB() {
         }
     );
 
-    const db = mongoose.connection;
+    const db = mongoose.connection; //getting a connection in mongoDB
+    let recorddb = db.db('recordList') // getting a particular database in a mongoDB.
     db.on("error", function () {
         console.error.bind(console, "connection error: ")
         process.exit();
